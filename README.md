@@ -1,6 +1,6 @@
 # A simple language frontend using LLVM
 This repository contains a basic LLVM compiler for a simple procedural programming language.
-In it's current stage it supports functions, evaluating basic math expressions, and local variables. 
+In its current stage it supports functions, evaluating basic math expressions, and local variables. 
 
 ## Design
 The design of the compiler is split into 3 main components:
