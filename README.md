@@ -25,7 +25,7 @@ clang++ -O3 parser.cpp AST.cpp codegen.cpp lexer.cpp main.cpp \`llvm-config --cx
 
 	return example(10 20 5 5)
 
-Compiling the above will output the following LLVM IR to `output.ll`.
+Compiling the above will output the following LLVM IR to `output.ll`. This output can be further compiled to machine code with the LLVM compiler llc or executed with the LLVM interpreter lli. 
 
 	; ModuleID = 'Module'
 	source_filename = "Module"
