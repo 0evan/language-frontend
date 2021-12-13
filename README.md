@@ -1,6 +1,6 @@
 # A simple language frontend using LLVM
 This repository contains a basic LLVM IR compiler for a simple procedural programming language.
-In its current stage it supports functions, evaluating basic math expressions, and local variables. 
+In its current stage the language supports functions, evaluating basic math expressions, and local variables. 
 
 ## Design
 The design of the compiler is split into 3 main components:
@@ -14,9 +14,11 @@ Also included are two helper classes:
 - `tokens` defines the language tokens
 
 ## Example
-compiling using llvm-config to print necessary flags for LLVM:
+compiling using llvm-config to print necessary flags:
 
 clang++ -O3 parser.cpp AST.cpp codegen.cpp lexer.cpp main.cpp \`llvm-config --cxxflags --ldflags --system-libs --libs all`
+
+An example program: 
 
 	function main() 
 
@@ -25,24 +27,7 @@ clang++ -O3 parser.cpp AST.cpp codegen.cpp lexer.cpp main.cpp \`llvm-config --cx
 
 	return example(10 20 5 5)
 
-Compiling the above will output the following LLVM IR to `output.ll`. This output can be further compiled to machine code with the LLVM compiler llc or executed with the LLVM interpreter lli. 
-
-	; ModuleID = 'Module'
-	source_filename = "Module"
-
-	define double @main() {
-	entry:
-		%calltmp = call double @example(double 1.000000e+01, double 2.000000e+01, double 5.000000e+00, double 5.000000e+00)
-		ret double %calltmp
-	}
-
-	define double @example(double %a, double %b, double %c, double %d) {
-	entry:
-		%multmp = fmul double %a, %b
-		%addtmp = fadd double %c, %d
-		%divtmp = fdiv double %multmp, %addtmp
-		ret double %divtmp
-	}
+Compiling the above will output LLVM IR to `output.ll`. This file can be further compiled to machine code with the LLVM compiler or executed with the LLVM interpreter.
 
 ## Resources
 - https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html
