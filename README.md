@@ -16,7 +16,7 @@ Also included are two helper classes:
 ## Example
 compiling using llvm-config to print necessary flags:
 
-`clang++ -O3 parser.cpp AST.cpp codegen.cpp lexer.cpp main.cpp \`llvm-config --cxxflags --ldflags --system-libs --libs all`
+``clang++ -O3 parser.cpp AST.cpp codegen.cpp lexer.cpp main.cpp `llvm-config --cxxflags --ldflags --system-libs --libs all``
 
 An example program: 
 
