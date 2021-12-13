@@ -1,5 +1,4 @@
-# A simple language frontend using LLVM
-This repository contains a basic LLVM IR compiler for a simple procedural programming language.
+This repository contains a compiler frontend for a simple procedural programming language.
 In its current stage the language supports functions, evaluating basic math expressions, and local variables. 
 
 ## Design
